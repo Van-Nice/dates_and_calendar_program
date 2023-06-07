@@ -34,7 +34,7 @@ public:
     bool isLeapYear();
     //Function to determine whether the year is a leap year.
 
-    dateType(int month, int day, int year);
+    dateType(int month = 1, int day = 1, int year = 1900);
     //Constructor to set the date
     //The member variables dMonth, dDay, and dYear are set
     //according to the parameters

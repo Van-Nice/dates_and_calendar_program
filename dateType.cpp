@@ -3,18 +3,24 @@
 
 void dateType::setDate(int month, int day, int year) {
     // set limits for date entries
-    dYear = year;
-    dMonth = month;
-    dDay = day;
+//    dYear = year;
+//    dMonth = month;
+//    dDay = day;
     // years
     if (dYear > 1) {
         dYear = 1900;
+        dYear = year;
+    } else {
         dYear = year;
     }
 
     // months
     if (dMonth > 1 && dMonth > 12) {
         dMonth = 1;
+        dMonth = month;
+        dDay = 1;
+        dDay = day;
+    } else {
         dMonth = month;
     }
 
@@ -53,21 +59,21 @@ void dateType::setDate(int month, int day, int year) {
     } else if (dMonth == 10 && (dDay < 1 || dDay > 31)) { // October
         dDay = 1;
         dDay = day;
-    } else if (dMonth == 9 && (dDay < 1 || dDay > 30)) { // November
+    } else if (dMonth == 11 && (dDay < 1 || dDay > 30)) { // November
         dDay = 1;
         dDay = day;
-    } else if (dMonth == 10 && (dDay < 1 || dDay > 31)) { // December
+    } else if (dMonth == 12 && (dDay < 1 || dDay > 31)) { // December
         dDay = 1;
+        dDay = day;
+    } else {
         dDay = day;
     }
 
 
     if (isLeapYear()) {
-        dMonth = month;
-        dDay = day;
-        dYear = year;
+        std::cout << "this is a leap year";
     } else {
-        std::cout << "This is not a leap year." << std::endl;
+        std::cout << "This is not a leap year.";
     }
 }
 
@@ -103,7 +109,7 @@ bool dateType::isLeapYear() {
 }
 
 dateType::dateType(int month, int day, int year) {
-    setDate(month, day, year);
+    dateType::setDate(month, day, year);
     dateType::printDate();
 }
 
