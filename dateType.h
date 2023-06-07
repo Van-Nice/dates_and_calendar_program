@@ -1,9 +1,6 @@
 //
 // Created by wilson on 6/7/23.
-//
 
-#ifndef DATES_AND_CALENDAR_PROGRAM_DATETYPE_H
-#define DATES_AND_CALENDAR_PROGRAM_DATETYPE_H
 
 #ifndef date_H
 #define date_H
@@ -19,25 +16,25 @@ public:
     //               dYear = year
 
 
-    int getDay() const;
+    int getDay();
     //Function to return the day.
     //Postcondition: The value of dDay is returned.
 
-    int getMonth() const;
+    int getMonth();
     //Function to return the month.
     //Postcondition: The value of dMonth is returned.
 
-    int getYear() const;
+    int getYear();
     //Function to return the year.
     //Postcondition: The value of dYear is returned.
 
-    void printDate() const;
+    void printDate();
     //Function to output the date in the form mm-dd-yyyy.
 
     bool isLeapYear();
     //Function to determine whether the year is a leap year.
 
-    explicit dateType(int month = 1, int day = 1, int year = 1900);
+    dateType(int month, int day, int year);
     //Constructor to set the date
     //The member variables dMonth, dDay, and dYear are set
     //according to the parameters
@@ -47,13 +44,12 @@ public:
     //used to initialize the member variables.
 
 private:
-    int dMonth;      //variable to store the month
-    int dDay;        //variable to store the day
-    int dYear;       //variable to store the year
+    int dMonth{};      //variable to store the month
+    int dDay{};        //variable to store the day
+    int dYear{};       //variable to store the year
 };
 
 
 #endif
 
 
-#endif //DATES_AND_CALENDAR_PROGRAM_DATETYPE_H
